@@ -36,12 +36,16 @@ public class Histogram{
         int i = 0;
 
         //set the value bin by bin
-        while (n < count && i < value.length){//loop until the last bin
-                if (value[i] >= lowerBound + n * binSize && value[i] < lowerBound + (n+1) * binSize){//if the value is inside the range of the current bin
+        //loop until the last bin
+        while (n < count && i < value.length){
+                //if the value is inside the range of the current bin
+                if (value[i] >= lowerBound + n * binSize && value[i] < lowerBound + (n+1) * binSize){
+                    //accumulate frequencies
                     heightOfEachBin[n] += freq[i];
                     i++;
-                } 
+                }
                 else{
+                    //move to next bin
                     n++;
                 }
         }

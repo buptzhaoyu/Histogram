@@ -14,6 +14,7 @@ public class HistogramTest{
         double[] value = {2.3, 2.4, 5.2, 6, 9.6, 9.8, 16, 17.2};
         double[] freq = {7, 8, 2, 3, 1, 1, 3, 6};
 
+        //get user input
         System.out.println("Please enter the lower bound: ");
         Scanner sc = new Scanner(System.in);
         h.setLowerBound(sc.nextDouble());
@@ -23,14 +24,17 @@ public class HistogramTest{
         h.setBinSize(sc.nextDouble());
         sc.close();
 
+        //get values from object h
         double[] height = h.heightOfBin(value, freq);
         double lowerBound = h.getLowerBound();
         double upperBound = h.getUpperBound();
         double binSize = h.getBinSize();
 
+        //print each value in array height, just for testing and debugging
         for (int i = 0; i < height.length; i++){
             System.out.println(height[i]);
         }
+
         //draw the histogram
         JFrame frame = new JFrame("Histogram");
         frame.setSize(800,600);
